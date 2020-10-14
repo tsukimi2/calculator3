@@ -26,5 +26,10 @@ pipeline {
         sh "./gradlew build"
       }
     }
+    stage("Docker build") {
+      steps {
+        sh "docker build -t osiris65/calculator:${BUILD_TIMESTAMP} ."
+      }
+    }
   }
 }
