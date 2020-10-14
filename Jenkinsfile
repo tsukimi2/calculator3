@@ -21,5 +21,10 @@ pipeline {
         sh "./gradlew checkstyleMain"
       }
     }
+    stage("Package") {
+      steps {
+        sh "./gradlew build"
+      }
+    }
   }
 }
