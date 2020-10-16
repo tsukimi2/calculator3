@@ -26,12 +26,11 @@ pipeline {
         sh "./gradlew build"
       }
     }
-/*
     stage("Docker build") {
+      agent { label 'jenkins-docker-docker-slave' }
       steps {
         sh "docker build -t osiris65/calculator:${BUILD_TIMESTAMP} ."
       }
     }
-*/
   }
 }
