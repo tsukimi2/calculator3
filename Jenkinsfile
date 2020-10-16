@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'java-docker-slave' }
+  agent { label 'java-docker-docker-slave' }
   stages {
     stage("Compile") {
       steps {
@@ -27,7 +27,6 @@ pipeline {
       }
     }
     stage("Docker build") {
-      agent { label 'jenkins-docker-docker-slave' }
       steps {
         sh "docker build -t osiris65/calculator:${BUILD_TIMESTAMP} ."
       }
