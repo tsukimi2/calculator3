@@ -38,5 +38,10 @@ pipeline {
         }
       }
     }
+    stage("Docker push") {
+      steps {
+        sh "docker push osiris65/calculator:${BUILD_TIMESTAMP}"
+      }
+    }
   }
 }
